@@ -33,13 +33,12 @@ namespace TwitchVMCAuthClient
                     await pipeClient.ConnectAsync(1000000);
                     var ss = new StreamString(pipeClient);
                     await ss.WriteString("SYNC");
-                    MessageBox.Show("c3");
                     await authClient.signal.WaitAsync();
                     await ss.WriteString(authClient.authOut);
                 }
                 catch (IOException e)
                 {
-                    MessageBox.Show(e.Message, "[SERVER] Error: {0}");
+                    MessageBox.Show(e.Message, "Pipe Error: {0}");
                 }
             }
             authClient.Close();

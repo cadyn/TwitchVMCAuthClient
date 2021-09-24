@@ -50,7 +50,6 @@ namespace TwitchVMCAuthClient
 
             if (s.Length > 0 && s[0].Equals('{'))
             {
-                Console.WriteLine("c1");
                 authOut = s;
                 signal.Release();
             }
